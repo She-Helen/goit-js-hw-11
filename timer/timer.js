@@ -15,6 +15,7 @@
 //     this.targetDate = targetDate;
 //     this.intervalId = null;
 //     this.isActive = false;
+//     this.objTime = {};
 //   }
 
 //   start() {
@@ -28,6 +29,7 @@
 //         const currentTime = Date.now();
 //         const deltaTime = this.targetDate - currentTime;
 //         this.updateTimerItems(deltaTime);
+//         this.updateViewTime();
 //       }, 1000);
 //     }
 //   }
@@ -43,17 +45,21 @@
 //   }
 
 //   updateTimerItems(time) {
-//     const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
-//     const hours = this.pad(
+//     this.objTime.days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
+//     this.objTime.hours = this.pad(
 //       Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
 //     );
-//     const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-//     const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+//     this.objTime.mins = this.pad(
+//       Math.floor((time % (1000 * 60 * 60)) / (1000 * 60))
+//     );
+//     this.objTime.secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+//   }
 
-//     refs.days.innerHTML = days;
-//     refs.hours.innerHTML = hours;
-//     refs.mins.innerHTML = mins;
-//     refs.secs.innerHTML = secs;
+//   updateViewTime() {
+//     refs.days.innerHTML = this.objTime.days;
+//     refs.hours.innerHTML = this.objTime.hours;
+//     refs.mins.innerHTML = this.objTime.mins;
+//     refs.secs.innerHTML = this.objTime.secs;
 //   }
 // }
 

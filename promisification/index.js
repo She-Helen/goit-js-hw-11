@@ -27,11 +27,12 @@
 // ];
 
 // const toggleUserState = (allUsers, userName) => {
-//   const updatedUsers = allUsers.map((user) =>
-//     user.name === userName ? { ...user, active: !user.active } : user
-//   );
+//   let updatedUsers = [];
 
 //   const promise = new Promise((resolve) => {
+//     updatedUsers = allUsers.map((user) =>
+//       user.name === userName ? { ...user, active: !user.active } : user
+//     );
 //     resolve(updatedUsers);
 //   });
 //   return promise;
